@@ -1,0 +1,20 @@
+// Noraml user 
+ID= user@user.com || Pass= user123
+
+
+// Admin
+ID= admin@admin.com || Pass= admin123
+
+
+// HR Admin
+ID= hradmin@admin.com || Pass= hradmin123
+
+// Manager
+ID= manager@manager.com || Pass=  manager123
+
+
+// Supervisor
+ID= supervisor@manager.com || Pass=  supervisor123
+
+//hradmin
+id// radharani@gmail.com || WKAa8YKl
