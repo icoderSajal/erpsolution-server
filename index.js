@@ -17,7 +17,7 @@ import path from "path";
 dotenv.config();
 
 // Connect DB
-//connectDB();
+connectDB();
 
 const app = express();
 
@@ -57,7 +57,7 @@ const PORT = process.env.PORT || 9000;
 
 //server listen or running
 app.listen(process.env.PORT, () => {
-    connectDB()
+    
     console.log(` server runnning on Port ${PORT}`);
 });
 
