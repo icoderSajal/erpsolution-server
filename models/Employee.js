@@ -97,6 +97,11 @@ const employeeSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  companyId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Company",
+    required: true,
+  },
   active: { type: Number, default: 1 }
 
 

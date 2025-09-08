@@ -34,6 +34,7 @@ import {
     deactiveCompany,
 } from "../controllers/companyController.js";
 import { getPermissionByModuleId } from "../controllers/userPermissionController.js";
+import { createVendor, deactiveVendor, getVendorById, getVendors, updateVendor } from "../controllers/vendorController.js";
 
 const router = express.Router();
 
@@ -81,6 +82,18 @@ router.put("/update-appmodule/:id", protect, adminOnly, updateAppModule);
 router.put("/delete-appmodule/:id", protect, adminOnly, deactiveAppModule);
 
 ///////////////////////////        User Access      //////////////////////////
+
+
+//appmodules
+/////////////////////////        App Vendor       //////////////////////////
+router.post("/create-vendor", protect, adminOnly, createVendor);
+router.get("/getvendors", protect, getVendors);
+router.get("/getvendor/:id", protect, adminOnly, getVendorById);
+router.put("/update-vendor/:id", protect, adminOnly, updateVendor);
+router.put("/delete-vendor/:id", protect, adminOnly, deactiveVendor);
+
+///////////////////////////        User Access      //////////////////////////
+
 
 router.get("/userpermisson/:moduleId", protect, adminOnly, getPermissionByModuleId);
 router.get("/getappdata", protect, adminOnly, groupedModulePermissions)

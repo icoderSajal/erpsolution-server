@@ -9,6 +9,8 @@ import locationRoutes from "./routes/locationRoutes.js"
 import inventoryRoutes from "./routes/inventoryRoutes.js"
 import cors from "cors";
 import path from "path";
+import purchaseOrderRoutes from "./routes/purchaseOrderRoutes.js";
+
 
 
 
@@ -17,7 +19,7 @@ import path from "path";
 dotenv.config();
 
 // Connect DB
-//connectDB();
+connectDB();
 
 const app = express();
 
@@ -39,6 +41,8 @@ app.use("/api/local", locationRoutes);
 
 app.use("/api/inventory", inventoryRoutes)
 
+app.use("/api/purchase", purchaseOrderRoutes);
+
 // Health check
 app.get("/", (req, res) => {
 
@@ -57,7 +61,6 @@ const PORT = process.env.PORT || 9000;
 
 //server listen or running
 app.listen(process.env.PORT, () => {
-    connectDB()
     console.log(` server runnning on Port ${PORT}`);
 });
 

@@ -29,10 +29,11 @@ export const addemployee = async (req, res) => {
       city,
       pin,
       maritalStatus,
-      salary
+      salary,
+      companyId
     } = req.body;
 
-    console.log(req.body)
+
 
     const user = await User.findOne({ email });
     if (user) {
@@ -43,16 +44,17 @@ export const addemployee = async (req, res) => {
     console.log(`the passwrd is ${password}`)
     const hashPassword = await bcrypt.hash(password, 10);
 
-    console.log(hashPassword)
+
 
 
     const newUser = await User({
       name,
       email,
       password,
-      role: role,
+      role,
 
     });
+
 
     const savedUser = await newUser.save();
 
@@ -78,7 +80,7 @@ export const addemployee = async (req, res) => {
       pin,
       maritalStatus,
       salary,
-
+      companyId
     });
 
     const userData = await newEmployee.save();
@@ -128,7 +130,7 @@ export const addemployee = async (req, res) => {
 
 export const getAllEmployees = async (req, res) => {
   try {
-    const employees = await Employee.find({ active: 1 }).populate("state").populate("city").populate("userId").populate("country");
+    const employees = await Employee.find({ active: 1 }).populate("state").populate("city").populate("userId").populate("country").populate('companyId');
 
 
     return res.status(200).json({

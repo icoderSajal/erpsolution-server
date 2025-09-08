@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema(
             default: ACTIVE.ACTIVE,
             index: true,
         },
-        
+
 
     },
     { timestamps: true }
