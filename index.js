@@ -10,7 +10,8 @@ import inventoryRoutes from "./routes/inventoryRoutes.js"
 import cors from "cors";
 import path from "path";
 import purchaseOrderRoutes from "./routes/purchaseOrderRoutes.js";
-
+import grnRoutes from "./routes/grnRoutes.js"
+import salesRoutes from "./routes/salesRoutes.js"
 
 
 
@@ -42,6 +43,9 @@ app.use("/api/local", locationRoutes);
 app.use("/api/inventory", inventoryRoutes)
 
 app.use("/api/purchase", purchaseOrderRoutes);
+app.use("/api/grn", grnRoutes);
+app.use("/api/sales", salesRoutes);
+
 
 // Health check
 app.get("/", (req, res) => {

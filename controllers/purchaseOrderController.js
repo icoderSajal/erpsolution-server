@@ -72,19 +72,38 @@ export const createPurchaseOrder = async (req, res) => {
 };
 
 // Get all purchase orders
+// export const getAllPurchaseOrders = async (req, res) => {
+//     try {
+//         //db.purchaseorders.find({poStatus:{$not:{$regex:'2'}}})
+//         const orders = await PurchaseOrder.find()
+//             .populate("vendorId", "vendorName")
+//             .populate("country", "name")
+//             .populate("state", "name")
+//             .populate("city", "name")
+//             .populate("items.itemId", "itemName");
+//         res.json({ success: true, orders });
+//     } catch (error) {
+//         res.status(500).json({ success: false, message: error.message });
+//     }
+// };
 export const getAllPurchaseOrders = async (req, res) => {
     try {
-        const orders = await PurchaseOrder.find()
+        // Fetch only purchase orders where poStatus is 0 or 1
+        const orders = await PurchaseOrder.find({
+            poStatus: { $in: [0, 1] }
+        })
             .populate("vendorId", "vendorName")
             .populate("country", "name")
             .populate("state", "name")
             .populate("city", "name")
             .populate("items.itemId", "itemName");
+
         res.json({ success: true, orders });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
 
 // Get single purchase order
 export const getPurchaseOrderById = async (req, res) => {

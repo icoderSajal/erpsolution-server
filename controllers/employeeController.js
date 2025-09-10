@@ -90,7 +90,7 @@ export const addemployee = async (req, res) => {
 
     const content = `
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-    <h2 style="color: #2a9d8f;">Welcome to Cruise Ship Management, ${savedUser.name}!</h2>
+    <h2 style="color: #2a9d8f;">Welcome to ERP Solutions, ${savedUser.name}!</h2>
     <p>We're excited to have you onboard. Your account has been successfully created. Please find your login credentials below:</p>
     
     <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
@@ -108,7 +108,7 @@ export const addemployee = async (req, res) => {
       </tr>
     </table>
 
-    <p style="margin-top: 20px;">You can now <a href="https://erpsolution-w9r2.vercel.app" style="color: #2a9d8f; text-decoration: none;"><b>login</b></a> using the credentials above.</p>
+    <p style="margin-top: 20px;">You can now <a href="https://erpsolution-client.vercel.app" style="color: #2a9d8f; text-decoration: none;"><b>login</b></a> using the credentials above.</p>
     
     <p>Thanks,<br/>Cruise Ship Management Team</p>
   </div>
