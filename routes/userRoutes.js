@@ -14,12 +14,12 @@ const router = express.Router();
 router.get("/route-permissions", protect, getRoutePermissions);
 
 // User permissions
-// router.post("/user-permissions", protect, adminOnly, setUserPermissions);
-// router.get("/permissions/:userId", protect, getUserPermissions);
+router.post("/user-permissions", protect, adminOnly, setUserPermissions);
+router.get("/permissions/:userId", protect, getUserPermissions);
 
 // // User route permissions
-// router.post("/user-route-permissions", protect, adminOnly, setUserRoutePermissions);
-// router.get("/route-permissions/:userId", protect, getUserRoutePermissions);
+router.post("/user-route-permissions", protect, adminOnly, setUserRoutePermissions);
+router.get("/route-permissions/:userId", protect, getUserRoutePermissions);
 
 export default router;
 

@@ -85,7 +85,7 @@ export const addemployee = async (req, res) => {
 
     const userData = await newEmployee.save();
 
-    console.log(userData)
+    //console.log(userData)
     //EDE7qCjD ??ayan@user.com
 
     const content = `
